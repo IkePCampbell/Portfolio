@@ -39,4 +39,9 @@ public class Display {
 		frame.pack(); //frame will resize canvas so you can see it fully
 	}
 	
+	public Canvas getCanvas() {
+		return canvas;
+		
+	}
+	
 }
