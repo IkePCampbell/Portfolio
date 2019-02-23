@@ -1,0 +1,1 @@
+Just practicing some Java programs, some of the sets were inspired by Dr. Diesburg of UNI's Intro to Computing class.
