@@ -198,6 +198,7 @@ class Inventory():
 
     if self.nav_menu_in == 4:
         self.compare_weapons(adict,achar)
+  
   def compare_weapons(self,adict,achar):
       """
       The purpose of this function is to compare the weapon the user currently
@@ -205,14 +206,19 @@ class Inventory():
       """
       itemList = []
       for item in adict:
-          itemList.append(item)
+          itemList.append(item) #creates tmp list of inventory
 
-      for item_in_inventory in itemList: #[Small,Dagger, Iron Sword] problem with this is we need the actual stats to comprae
-          for all_items in self.item_list:
-              if all_items[1] == item_in_inventory[self.equipment_selection]:
-                  print(all_items[4])
-      #print(itemList, self.equipment_selection)
+      for possibleItems in self.item_list:
+        if possibleItems[1] == itemList[self.equipment_selection-1]:  #name of item "small dagger"
+          hoveredOver = possibleItems[4]
+        else:
+          pass
 
+      tmpAttack = achar.baseattack + hoveredOver[0]
+      tmpDefence = achar.baseattack + hoveredOver 
+
+
+     #FROM HERE SHOW THE ARROWS 
 
   def update_dict(self,acode, atype):
     """
@@ -522,6 +528,9 @@ class Inventory():
                 self.show_equipment_selection = 0
                 self.equipment_selection = 1
               tmp = len(self.update_dict("Equipment",self.cycle_choice))
+
+
+              #COMPARE WEAPON JAZZ HERE
 
 
               if akey == 's': #cycle down

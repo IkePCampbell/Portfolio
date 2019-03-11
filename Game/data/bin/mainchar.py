@@ -25,7 +25,7 @@ class Main_Player(pygame.sprite.Sprite):
     self.helmet =   [9,  "Cloth Hat"      ,["Equipment","Helm"], [1, "Cloth"], [0,1,2,3],  [15,8],["Farmhands use these to protect from the sun, and you wanna protect from a sword."]]
     self.armor  =   [12, "Cloth Armor"    ,["Equipment","Chest"],[1, "Cloth"],[0,1,2,2], [15,8], ["Taken from a practice dummy, this hopefully will keep you alive."]]
     self.trinket = [0, "NA"]
-
+  #WHEN YOU ADD TRINKETS UPDATE INVENTORY.PY LINE 217-220
     self.baseattack = 1
     self.basedefence = 1
     self.basespeed = 1
