@@ -43,11 +43,11 @@ class GAMEFRAME:
       [0,1,1,1,1,1,1,1,1,1,1,1,1,1,0], #7
       [0,1,1,1,1,1,1,1,1,1,1,0,1,1,0], #8
       [0,1,0,0,1,1,1,1,1,1,1,1,1,1,0], #9
-      [0,1,0,1,1,1,1,1,1,1,1,1,1,1,0], #10
-      [0,1,0,1,0,0,1,1,1,1,1,0,1,0,0], #11
-      [0,0,1,1,1,0,0,1,1,1,1,0,1,1,0], #12
-      [0,1,1,1,1,0,1,1,1,1,1,0,1,1,0], #13
-      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]  #14
+      [0,1,0,1,1,1,1,0,0,0,1,1,1,1,0], #10
+      [0,1,0,1,0,0,0,1,1,1,0,0,1,0,0], #11
+      [0,0,1,1,1,0,0,1,0,1,0,0,1,1,0], #12
+      [0,1,1,1,1,0,1,1,0,1,0,0,1,1,0], #13
+      [0,0,0,0,0,0,0,0,0,1,0,0,0,0,0]  #14
       ]
 
     self.collision_dict = {}
@@ -192,7 +192,7 @@ main_char = Main_Player(64,64,GAME.collision_dict,GAME.enemy_dict,GAME.npc_dict,
 inventory = Inventory(GAME.win,GAME.item_list,main_char,GAME.party,start_inventory)
 bat1 = Bat(1,10,1,1,10,6,6)
 bat2 = Bat(1,10,1,1,10,9,9)
-
+bat3 = Bat(1,10,1,1,10,11,11)
 merchant1 = Merchant(5,3,tier1_consumables,2)
 combat = Combat()
 ###############################################
@@ -200,6 +200,7 @@ enemies = [bat1,bat2]
 npcs = [merchant1]
 GAME.enemy_dict['mob'] = bat1
 GAME.enemy_dict['mob1'] = bat2
+GAME.enemy_dict['mob2'] = bat3
 GAME.npc_dict['merchant1'] = merchant1
 
 GAME.party.append(main_char)
@@ -283,7 +284,7 @@ while run:
     #INTERACTS WITH SUB MENU
     if inventory.nav_menu_in == 1:
       inventory.access_submenu(inventory.nav_menu)
-  
+
     if inventory.nav_menu_in == 2:
       if inventory.nav_menu == 2: #on equipment
         inventory.access_submenu(inventory.nav_menu)
@@ -298,7 +299,7 @@ while run:
         inventory.show_equipment_selection = 1
         inventory.cycle_weapons()
 
-    
+
       #inventory.update_inventory()
 
 ##    if inventory.nav_menu_in == 1:  KEEP FOR ITEMS
